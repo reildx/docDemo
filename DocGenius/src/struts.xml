@@ -15,7 +15,7 @@
           <action name="login" class="UserAction" method="login">
           	<result name ="success" type="chain">getMyPapers</result>
           	<result name ="input">/jsp/Login.jsp</result>
-          	<result name="admin">/jsp/MyProfile.jsp</result>
+          	<result name="admin">/jsp/Admin.jsp</result>
           </action>
           
           <action name="uploadAttach" class="PaperAction" method="uploadAttach">

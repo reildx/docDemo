@@ -393,6 +393,7 @@ public class PaperAction extends BaseAction {
 			this.attach.setPath(path);
 			this.attach.setDate(new Date(System.currentTimeMillis()));
 			this.paperservice.uploadAttach(this.attach);
+			this.editPoster=null;
 		}
 		
 		//upload slide
@@ -408,6 +409,7 @@ public class PaperAction extends BaseAction {
 			this.attach.setPath(path);
 			this.attach.setDate(new Date(System.currentTimeMillis()));
 			this.paperservice.uploadAttach(this.attach);
+			this.editSlide=null;
 		}
 		//upload demo
 		
@@ -423,6 +425,7 @@ public class PaperAction extends BaseAction {
 			this.attach.setPath(path);
 			this.attach.setDate(new Date(System.currentTimeMillis()));
 			this.paperservice.uploadAttach(this.attach);
+			this.editDemo=null;
 		}
 		//upload code
 		if(this.editCode!=null){
@@ -437,6 +440,7 @@ public class PaperAction extends BaseAction {
 			this.attach.setPath(path);
 			this.attach.setDate(new Date(System.currentTimeMillis()));
 			this.paperservice.uploadAttach(this.attach);
+			this.editCode=null;
 		}
 		//upload supplement
 		if(this.editSpt!=null){
@@ -451,6 +455,7 @@ public class PaperAction extends BaseAction {
 			this.attach.setPath(path);
 			this.attach.setDate(new Date(System.currentTimeMillis()));
 			this.paperservice.uploadAttach(this.attach);
+			this.editSpt=null;
 		}
 //		for(int i = 0;i< this.uploadFile.length;i++){
 //			type = this.request().getParameter("attach.type").toString();
