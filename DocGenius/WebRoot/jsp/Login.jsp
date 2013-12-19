@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <div id="wrapper">
 
-	<s:form id="login" name="login-form" class="login-form" action="login" method="post">
+	<s:form id="login" name="login-form" class="login-form" action="/jsp/login" method="post">
 	
 		<div class="header">
 		<h1>用户登录</h1>
