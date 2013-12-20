@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />  
+      <package name="doc" namespace="/jsp"
+          extends="struts-default">
+          <action name="hello">
+              <result>/user/login.jsp</result>
+              
+          </action>
+          
+          <action name="search">
+          	<result>/jsp/DocumentSearchResult.jsp</result>
+          </action>
+          <action name="login" class="UserAction" method="login">
+          	<result name ="success" type="chain">getMyPapers</result>
+          	<result name ="input">/jsp/Login.jsp</result>
+          	<result name="admin">/jsp/Admin.jsp</result>
+          </action>
+          
+          <action name="uploadAttach" class="PaperAction" method="uploadAttach">
+          	<result name="success">/jsp/ImportDocuments.jsp</result>
+          	<result name="attachSuccess">/jsp/ImportSucceed.jsp</result>
+          </action>
+          
+          <action name="uploadFile" class="PaperAction" method="uploadInfo">
+          	<result name="input">/jsp/ImportDocuments.jsp</result>
+          	<result name="success">/jsp/ImportDocuments.jsp</result>
+          </action>
+          
+          <action name="editAttach" class="PaperAction" method="editAttach">
+          	<result name="success">/jsp/ImportDocuments.jsp</result>
+          	<result name="attachSuccess">/jsp/EditSucceed.jsp</result>
+          </action>
+          
+          <action name="editFile" class="PaperAction" method="uploadInfo">
+          	<result name="success">/jsp/EditDocuments.jsp</result>
+          </action>
+          
+          <action name="getMyPapers" class="PaperAction" method="getMyPapers">
+          	<result name="success">/jsp/MyDocuments.jsp</result>
+          </action>
+          
+          <action name="editPaper" class="PaperAction" method="getSelectPaper">
+          	<result name="success" type="chain">getAttaches</result>
+          </action>
+          
+           <action name="getAttaches" class="PaperAction" method="getAttaches">
+          	<result name="success">/jsp/EditDocuments.jsp</result>
+          </action>
+      </package>
+</struts>    
