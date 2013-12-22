@@ -181,7 +181,7 @@ hr { display: none; }
 /* Page */
 
 #statistic_page {
-	width: 900px;
+	width: 920px;
 	margin: 0 auto;
 	padding: 40px 20px 40px 20px;
 	background: #000000;
@@ -208,6 +208,12 @@ hr { display: none; }
 .input{
 	color: #00ffff;
 	font-size: 15px;
+}
+
+.submit {
+	width: 65px;
+	height: 30px;
+	border-radius: 5px;
 }
 
 #statistic_paper, #statistic_simple_comment, #statistic_detail_comment, #statistic_attachment{

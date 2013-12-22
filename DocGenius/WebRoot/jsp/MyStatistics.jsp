@@ -1,5 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ page isELIgnored="false" %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!--
 Design by Free CSS Templates
 http://www.freecsstemplates.org
@@ -18,6 +20,7 @@ Released   : 20091206
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="css/MyStatistics.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="Calendar.js"></script>
 </head>
 <body>
 	<div id="logo">
@@ -53,11 +56,21 @@ Released   : 20091206
 
 	<div id="statistic_page">
 		<div class="choose">
-			<form>
-				名字：<input type="text" name="name" />
-				ID：<input type="text" name="id" />
-				<input type="submit" value="查询" />
-			</form>
+			<s:form>
+			<table border="0"  align="center">
+				<tr>
+  					<td>起始时间：</td>
+  					<td><input name="starttime" type="text" onfocus="setday(this)" readonly="readonly" /></td>
+  					<td>截止时间：</td>
+  					<td><input name="endtime" type="text" onfocus="setday(this)" readonly="readonly" /></td>
+				</tr>
+				<tr>
+  					<td>名字：</td>
+  					<td><input type="text" name="name" /></td>
+				</tr>
+			</table>
+				<input type="submit" value="查询" class="submit"/>
+			</s:form>
 		</div>
 
 		<div id="statistic_paper">
