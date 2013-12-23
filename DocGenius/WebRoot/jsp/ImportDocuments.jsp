@@ -11,8 +11,10 @@
 <meta name="description" content="" />
 <link href="css/ImportDocuments.css" rel="stylesheet" type="text/css"
 	media="screen" />
+
 </head>
 <body>
+
 	<div id="logo">
 		<h1>
 			<a href="#">文献精灵 </a>
@@ -61,51 +63,122 @@
 			<s:form action="uploadAttach" method="post" enctype="multipart/form-data">
 				<div class="entry">
 					<a class="title33">上传文献:</a>
-						<input name="uploadFile" type='file' style="width:200px;"/>
+						<input name="uploadFile" type='file' style="width:200px;" cssClass="links"/>
 						<% Object name = request.getAttribute("uploadFileName"); %>
 						已上传：<span><%= (name == null ? "无" : name) %></span>		
 						<s:hidden name="attach.type" value="paper" ></s:hidden>
-						<s:submit value="上传" cssClass="links"></s:submit>
+						<div class="footer">
+						    <s:submit value="上传" cssClass="links"></s:submit>
+						</div>
 						<!--<INPUT class="title6"   type=file value="上传文献" >-->
 				</div>
 			</s:form>
 
+<!--  <s:select list="{'aa','bb','cc'}" theme="simple" headerKey="00" headerValue="00"></s:select>-->
 			<s:form action="uploadFile" method="post" enctype="multipart/form-data">
 				<div class="entry2">
 				
 					<p class="title3">基本信息</p>
-					<p class="title4">
-						题目:&nbsp;&nbsp;<s:textfield class="title1" name="paper.title"></s:textfield>
-						<!--<INPUT class="title1.1" type=text value="" />-->
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						作者:&nbsp;&nbsp;<s:textfield class="title1" name="paper.author"></s:textfield>
-						<!--<INPUT class="title1.1"type=text value="" />-->
+					
+
+					<p style="margin-left:100px; color:#FFFFFF">
+					    <tr>
+					        <td>选择文献分类</td>
+					        <td>
+					        <select name="文献分类" class="select" onchange="selChange(this)" style="margin-left:100px; border:1px medium #000066; border-color:#FFFFFF">
+					             <option value="0" style="font-size:15px;"  selected="selected">请选择文献类型</option>
+					             <option value="1" style="font-size:15px;">图书</option>
+					             <option value="2" style="font-size:15px;">图书章节</option>
+					             <option value="3" style="font-size:15px;">期刊</option>
+					             <option value="4" style="font-size:15px;">会议</option>
+					             <option value="5" style="font-size:15px;">学位论文</option>  
+					             <option value="6" style="font-size:15px;">技术报告</option>
+					             <option value="7" style="font-size:15px;">在线资源</option> 
+					        </select>
+					        </td>
+					    </tr>   
 					</p>
 					
 					<p class="title4">
-						分类:&nbsp;&nbsp;<s:textfield cssClass="title1.1" name="paper.type"></s:textfield>
+						标题:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<s:textfield class="title1" name="paper.title"></s:textfield>
+						<!--<INPUT class="title1.1" type=text value="" />-->
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						作者:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<s:textfield class="title1" name="paper.author"></s:textfield>
+						<!--<INPUT class="title1.1"type=text value="" />-->
+					</p>
+					
+					<p class="title4" >
+						年份:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<s:select list="{'年份不详','1900以前','1901-1910','1911-1920','1921-1930','1931-1940','1941-1950',
+						'1951-1960','1961-1970','1971-1980','1981-1990','1991-2000','2001','2002','2003','2004',
+						'2005','2006','2007','2008','2009','2010','2011','2012','2013'}" 
+						cssClass="year" theme="simple" headerKey="00" headerValue="请选择年份"></s:select>
 						<!--<INPUT class="title1.1" type=text value="">-->
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年份:&nbsp;&nbsp;<s:textfield cssClass="title1.1" name="paper.year"></s:textfield>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							页码:&nbsp;&nbsp;&nbsp;&nbsp;
+							<s:textfield cssClass="title1.1" name="paper.year"></s:textfield>
 							<!--<INPUT class="title1.1"
 							type=text value="">-->
 					</p>
-					<p class="title4">
-						页数:&nbsp;&nbsp;<s:textfield cssClass="title1.1" name="paper.pages"></s:textfield>
+					<p class="title4" >
+						出版社:&nbsp;
+						<s:textfield cssClass="title1.1" name="paper.pages"></s:textfield>
 						<!--<INPUT class="title1.1" type=text value="">-->
-							&nbsp;&nbsp;&nbsp;&nbsp;关键字:&nbsp;&nbsp;<s:textfield cssClass="title1.1" name="paper.keywords"></s:textfield>
+							&nbsp;&nbsp;&nbsp;&nbsp;关键字:&nbsp;&nbsp;&nbsp;&nbsp;
+							<s:textfield cssClass="title1.1" name="paper.keywords"></s:textfield>
 							<!--<INPUT class="title1.1" type=text value="">-->
 					</p>
 					<p class="title4">
-						URL:&nbsp;&nbsp;<s:textfield cssClass="title1.1" name="paper.url"></s:textfield>
+						URL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<s:textfield cssClass="title1.1" name="paper.url"></s:textfield>
 						<!--<INPUT class="title1.1" type=text value="">-->
-						&nbsp;&nbsp;&nbsp;&nbsp;出版社:&nbsp;&nbsp;<s:textfield cssClass="title1.1" name="paper.publisher"></s:textfield>
 							<!--<INPUT class="title1.1" type=text value="">-->
 					</p>
-					<p class="title4">
-						标签:&nbsp;&nbsp;<s:textfield cssClass="title1.1" name="paper.tips"></s:textfield>
+					
+					
+					
+					
+					<div class="entry"></div>
+					
+					
+					
+					
+					<p class="title5">
+						<b id="so" style="display:">&nbsp;&nbsp;&nbsp;&nbsp;出处:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+						<s:textfield style="display:" cssClass="title1.1" name="paper.tips" id="source"></s:textfield>
+						<b id="ci" style="display:">&nbsp;&nbsp;&nbsp;&nbsp;城市:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+							<s:textfield style="display:" cssClass="title1.1" name="paper.keywords" id="city"></s:textfield>
 					</p>
-					<p class="title4" style="vertical-align:top">
-						摘要:&nbsp;&nbsp;<s:textarea style="width:390px;height:100px;margin-top:10px" name="paper.abstract_"></s:textarea>
+					
+					<p class="title5">
+						<b id="do" style="display:">&nbsp;&nbsp;&nbsp;&nbsp;DOI:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+						<s:textfield style="display:" cssClass="title1.1" name="paper.tips" id="doi"></s:textfield>
+						<b id="ed">&nbsp;&nbsp;&nbsp;&nbsp;编辑者:&nbsp;&nbsp;</b>
+							<s:textfield cssClass="title1.1" name="paper.keywords" id="editor"></s:textfield>
+					</p>
+					
+					<p class="title5">
+						<b id="is">&nbsp;&nbsp;&nbsp;&nbsp;ISBN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+						<s:textfield cssClass="title1.1" name="paper.tips" id="isbn"></s:textfield>
+						<b id="bo" style="display:">&nbsp;&nbsp;&nbsp;&nbsp;图书名:&nbsp;&nbsp;</b>
+							<s:textfield style="display:" cssClass="title1.1" name="paper.keywords" id="book"></s:textfield>
+					</p>
+					
+					<p class="title5">
+						<b style="display:" id="sc">&nbsp;&nbsp;&nbsp;&nbsp;学校:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+						<s:textfield style="display:" cssClass="title1.1" name="paper.tips" id="school">
+						</s:textfield>
+						<b id="nu" style="display:">&nbsp;&nbsp;&nbsp;&nbsp;卷和期:&nbsp;&nbsp;</b>
+							<s:textfield style="display:" cssClass="title1.1" name="paper.keywords" id="number"></s:textfield>
+					</p>
+					
+					<div class="entry"></div>
+					
+					<p class="title5" style="vertical-align:top">
+						&nbsp;&nbsp;&nbsp;&nbsp;摘要:&nbsp;&nbsp;
+						<s:textarea style="width:390px;height:100px;margin-top:10px" name="paper.abstract_"></s:textarea>
 							<!--<INPUT class="title1.1" type=text value="">-->
 					</p>
 					<s:submit value="保存" cssClass="links"></s:submit>
@@ -132,6 +205,15 @@
 					<!--<INPUT class="title8"   type=file value="上传文献" >-->
 					<s:file name="uploadDemo" class="title8"></s:file>
 					<s:hidden name="attach.type" value="demo" ></s:hidden>
+					<s:file name="uploadCode" id="video1" style="display:none"></s:file>
+					<s:hidden name="attach.type" value="code" ></s:hidden>
+					
+					<a class="title6" onclick="add()">继续添加&nbsp;</a>
+					
+					<s:file name="uploadCode" id="video2" style="display:none"></s:file>
+					<s:hidden name="attach.type" value="code" ></s:hidden>
+					<s:file name="uploadCode" id="video3" style="display:none"></s:file>
+					<s:hidden name="attach.type" value="code" ></s:hidden>
 				</div>
 
 				<div class="entry">
@@ -139,12 +221,30 @@
 					<!--<INPUT class="title8"   type=file value="上传文献" >-->
 					<s:file name="uploadCode" class="title8"></s:file>
 					<s:hidden name="attach.type" value="code" ></s:hidden>
+					<s:file name="uploadCode" id="code1" style="display:none"></s:file>
+					<s:hidden name="attach.type" value="code" ></s:hidden>
+					
+					<a class="title6" onclick="add1()">继续添加&nbsp;</a>
+					
+					<s:file name="uploadCode" id="code2" style="display:none"></s:file>
+					<s:hidden name="attach.type" value="code" ></s:hidden>
+					<s:file name="uploadCode" id="code3" style="display:none"></s:file>
+					<s:hidden name="attach.type" value="code" ></s:hidden>
 				</div>
 
 				<div class="entry">
 					<a class="title7">上传补充:</a>
 					<s:file name="uploadSpt" class="title8"></s:file>
 					<s:hidden name="attach.type" value="supplement" ></s:hidden>
+					<s:file name="uploadCode" id="supplement1" style="display:none"></s:file>
+					<s:hidden name="attach.type" value="code" ></s:hidden>
+					
+					<a class="title6" onclick="add3()">继续添加&nbsp;</a>
+					
+					<s:file name="uploadCode" id="supplement2" style="display:none"></s:file>
+					<s:hidden name="attach.type" value="code" ></s:hidden>
+					<s:file name="uploadCode" id="supplement3" style="display:none"></s:file>
+					<s:hidden name="attach.type" value="code" ></s:hidden>
 				</div>
 
 				<div class="entry">
@@ -227,4 +327,186 @@
 	</div>
 	<!-- end #footer -->
 </body>
+
+<script type="text/javascript" >
+    var button = 0;
+    function add(){
+        if(document.getElementById("video1").style.display=="none")
+            document.getElementById("video1").style.display="";
+        else if(document.getElementById("video2").style.display=="none")
+            document.getElementById("video2").style.display="";
+        else if(document.getElementById("video3").style.display=="none")
+            document.getElementById("video3").style.display="";
+        else
+            alert("最多添加四个文件！！");
+    }
+    
+    function add1(){
+        if(document.getElementById("code1").style.display=="none")
+            document.getElementById("code1").style.display="";
+        else if(document.getElementById("code2").style.display=="none")
+            document.getElementById("code2").style.display="";
+        else if(document.getElementById("code3").style.display=="none")
+            document.getElementById("code3").style.display="";
+        else
+            alert("最多添加四个文件！！");
+    }
+    
+    function add2(){
+        if(document.getElementById("video1").style.display=="none")
+            document.getElementById("video1").style.display="";
+        else if(document.getElementById("video2").style.display=="none")
+            document.getElementById("video2").style.display="";
+        else if(document.getElementById("video3").style.display=="none")
+            document.getElementById("video3").style.display="";
+        else
+            alert("最多添加四个文件！！");
+    }
+    
+    function add3(){
+        if(document.getElementById("supplement1").style.display=="none")
+            document.getElementById("supplement1").style.display="";
+        else if(document.getElementById("supplement2").style.display=="none")
+            document.getElementById("supplement2").style.display="";
+        else if(document.getElementById("supplement3").style.display=="none")
+            document.getElementById("supplement3").style.display="";
+        else
+            alert("最多添加四个文件！！");
+    }
+    
+    function selChange(obj)
+    {
+        var value = obj.options[obj.selectedIndex].value;// 选中的value值
+        //alert(value);
+        if(value == 1){//图书
+            document.getElementById("source").style.display="none";
+            document.getElementById("so").style.display="none";
+            document.getElementById("city").style.display="none";
+            document.getElementById("ci").style.display="none";
+            document.getElementById("doi").style.display="none";
+            document.getElementById("do").style.display="none";
+            document.getElementById("editor").style.display="";
+            document.getElementById("ed").style.display="";
+            document.getElementById("isbn").style.display="";
+            document.getElementById("is").style.display="";
+            document.getElementById("book").style.display="none";
+            document.getElementById("bo").style.display="none";
+            document.getElementById("school").style.display="none";
+            document.getElementById("sc").style.display="none";
+            document.getElementById("number").style.display="none";
+            document.getElementById("nu").style.display="none";
+        }
+        if(value == 2){//图书章节
+            document.getElementById("source").style.display="none";
+            document.getElementById("so").style.display="none";
+            document.getElementById("city").style.display="none";
+            document.getElementById("ci").style.display="none";
+            document.getElementById("doi").style.display="none";
+            document.getElementById("do").style.display="none";
+            document.getElementById("editor").style.display="";
+            document.getElementById("ed").style.display="";
+            document.getElementById("isbn").style.display="none";
+            document.getElementById("is").style.display="none";
+            document.getElementById("book").style.display="";
+            document.getElementById("bo").style.display="";
+            document.getElementById("school").style.display="none";
+            document.getElementById("sc").style.display="none";
+            document.getElementById("number").style.display="none";
+            document.getElementById("nu").style.display="none";
+        }
+        if(value == 3){//期刊
+            document.getElementById("source").style.display="";
+            document.getElementById("so").style.display="";
+            document.getElementById("city").style.display="none";
+            document.getElementById("ci").style.display="none";
+            document.getElementById("doi").style.display="";
+            document.getElementById("do").style.display="";
+            document.getElementById("editor").style.display="none";
+            document.getElementById("ed").style.display="none";
+            document.getElementById("isbn").style.display="none";
+            document.getElementById("is").style.display="none";
+            document.getElementById("book").style.display="none";
+            document.getElementById("bo").style.display="none";
+            document.getElementById("school").style.display="none";
+            document.getElementById("sc").style.display="none";
+            document.getElementById("number").style.display="";
+            document.getElementById("nu").style.display="";
+        }
+        if(value == 4){//会议
+            document.getElementById("source").style.display="";
+            document.getElementById("so").style.display="";
+            document.getElementById("city").style.display="";
+            document.getElementById("ci").style.display="";
+            document.getElementById("doi").style.display="";
+            document.getElementById("do").style.display="";
+            document.getElementById("editor").style.display="none";
+            document.getElementById("ed").style.display="none";
+            document.getElementById("isbn").style.display="none";
+            document.getElementById("is").style.display="none";
+            document.getElementById("book").style.display="none";
+            document.getElementById("bo").style.display="none";
+            document.getElementById("school").style.display="none";
+            document.getElementById("sc").style.display="none";
+            document.getElementById("number").style.display="none";
+            document.getElementById("nu").style.display="none";
+        }
+        if(value == 5){//学位论文
+            document.getElementById("source").style.display="none";
+            document.getElementById("so").style.display="none";
+            document.getElementById("city").style.display="none";
+            document.getElementById("ci").style.display="none";
+            document.getElementById("doi").style.display="none";
+            document.getElementById("do").style.display="none";
+            document.getElementById("editor").style.display="none";
+            document.getElementById("ed").style.display="none";
+            document.getElementById("isbn").style.display="none";
+            document.getElementById("is").style.display="none";
+            document.getElementById("book").style.display="none";
+            document.getElementById("bo").style.display="none";
+            document.getElementById("school").style.display="";
+            document.getElementById("sc").style.display="";
+            document.getElementById("number").style.display="none";
+            document.getElementById("nu").style.display="none";
+        }
+        if(value == 6){//技术报告
+            document.getElementById("source").style.display="none";
+            document.getElementById("so").style.display="none";
+            document.getElementById("city").style.display="none";
+            document.getElementById("ci").style.display="none";
+            document.getElementById("doi").style.display="none";
+            document.getElementById("do").style.display="none";
+            document.getElementById("editor").style.display="none";
+            document.getElementById("ed").style.display="none";
+            document.getElementById("isbn").style.display="none";
+            document.getElementById("is").style.display="none";
+            document.getElementById("book").style.display="none";
+            document.getElementById("bo").style.display="none";
+            document.getElementById("school").style.display="none";
+            document.getElementById("sc").style.display="none";
+            document.getElementById("number").style.display="none";
+            document.getElementById("nu").style.display="none";
+        }
+        if(value == 7){//在线资源
+            document.getElementById("source").style.display="none";
+            document.getElementById("so").style.display="none";
+            document.getElementById("city").style.display="none";
+            document.getElementById("ci").style.display="none";
+            document.getElementById("doi").style.display="none";
+            document.getElementById("do").style.display="none";
+            document.getElementById("editor").style.display="none";
+            document.getElementById("ed").style.display="none";
+            document.getElementById("isbn").style.display="none";
+            document.getElementById("is").style.display="none";
+            document.getElementById("book").style.display="none";
+            document.getElementById("bo").style.display="none";
+            document.getElementById("school").style.display="none";
+            document.getElementById("sc").style.display="none";
+            document.getElementById("number").style.display="none";
+            document.getElementById("nu").style.display="none";
+        }
+        
+    }
+
+    </script>
+
 </html>
