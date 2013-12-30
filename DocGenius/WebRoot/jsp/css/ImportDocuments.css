@@ -220,6 +220,25 @@ hr { display: none; }
 	color: #639CBF;
 }
 
+
+.name{
+    border:0px #ff0000 solid;
+	text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font: 13px/26px "Helvetica Neue", Helvetica, Arial, sans-serif,bold;
+    font-weight: bold;
+	width:150px;
+	
+	margin: 0 10px 0 570px;
+    padding: 1px 9px 5px 18px;
+	
+	background: url(../images/b7.png) no-repeat top right; 
+	color:#a0a0a0;
+    text-shadow: 1px 1px 0px #000000;
+    filter: dropshadow(color=#000000, offx=1, offy=1);  
+}
+
 #logo h1 a {
 	text-decoration: none;
 	color: #FFFFFF;
@@ -249,13 +268,18 @@ hr { display: none; }
 }
 
 .post .title1 {
-	height: 30px; //é«åº¦
+	height: 30px;
 	margin-left: 50px;
 }
 
 .post .title1.1 {
-	height: 20px; //é«åº¦
+	height: 20px;
 	margin-left: 50px;
+}
+
+.post .title1.2 {
+	height: 20px;
+	margin-left: 20px;
 }
 
 .post .title a {
@@ -275,7 +299,7 @@ hr { display: none; }
 }
 
 .post .title3 {
-    margin-left:250px;  //å·¦è¾¹è·
+    margin-left:250px; 
     top:100px;
 	text-decoration: none;
 	text-transform: capitalize;
@@ -301,6 +325,14 @@ hr { display: none; }
 	color: #FFFFFF;
 }
 
+.post .title4.1 {
+    margin-left:100px;  //å·¦è¾¹è·
+    top:100px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 15px;
+	color: #FFFFFF;
+}
 
 .post .title5 {
     margin-left:60px;  //å·¦è¾¹è·
@@ -459,13 +491,13 @@ hr { display: none; }
 	border: 1px solid #5F817E;
 }
 
-.post .links {   //ä¿å­ä¿®æ¹å¨å´çè¾¹æ¡
+.post .links {  
     
 	left:90px;
 	width: 100px;
 	height: 32px;
-	margin: 20px 0px 4px 260px;  //最后一项为 left：
-	padding: 3px 0px 0px 40px;    
+	margin: 20px 0px 4px 260px;
+	padding: 3px 0px 0px 0px;    
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 20px;
@@ -491,7 +523,7 @@ hr { display: none; }
 	left:100px;
 	width: 100px;
 	height: 28px;
-	margin: 20px 0px 4px 10px;  //å¨å´è·ç¦»ï¼è°æ´ä¿å­ä¿®æ¹çä½ç½®
+	margin: 20px 0px 4px 10px; 
 	padding: 3px 0px 0px 40px;    
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;

@@ -23,8 +23,12 @@ Released   : 20091206
 <script src="Calendar.js"></script>
 </head>
 <body>
+    <s:submit  id="name" value="欢迎您，文献精灵" cssClass="name" 
+			onmouseover="change()" onmouseout="changeback()">
+	</s:submit>
 	<div id="logo">
-		<h1><a href="#">文献精灵  </a></h1>
+		<h1><a href="Main.jsp">文献精灵  </a>
+		</h1>
 		<p><em>最好的组内文献管理工具<a href="http://www.freecsstemplates.org/"></a></em></p>
 	</div>
 	<hr />
@@ -99,4 +103,13 @@ Released   : 20091206
 	</div>
 	<!-- end #footer -->
 </body>
+<script type="text/javascript" >
+     function change(){
+        document.getElementById("name").value = "退出";
+    }
+    
+    function changeback(){
+        document.getElementById("name").value = "欢迎您，文献精灵";
+    }
+</script>
 </html>

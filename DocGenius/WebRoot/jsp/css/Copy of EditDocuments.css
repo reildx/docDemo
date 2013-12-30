@@ -129,7 +129,6 @@ hr { display: none; }
 }
 
 #menu a {
-	display: block;
 	float: left;
 	height: 32px;
 	padding: 14px 20px 0px 20px;
@@ -198,45 +197,13 @@ hr { display: none; }
 
 /* Page */
 
-#statistic_page {
-	width: 990px;
+#page {
+	width: 970px;
 	margin: 0 auto;
-	padding: 40px 20px 40px 20px;
+	padding: 40px 30px 0px 30px;
 	background: #000000;
 }
 
-/* Image */
-.image{
-	text-align: center;
-}
-
-.item{
-	line-height: 100%;
-	font-size: 20px;
-	text-align: center;
-	color: #00ffff;
-	padding-top: 12px;
-}
-
-.choose{
-	text-align: center;
-	margin-bottom: 15px;
-}
-
-.input{
-	color: #00ffff;
-	font-size: 15px;
-}
-
-.submit {
-	width: 65px;
-	height: 30px;
-	border-radius: 5px;
-}
-
-#statistic_paper, #statistic_simple_comment, #statistic_detail_comment, #statistic_attachment{
-	outline-style: solid;
-}
 
 /** LOGO */
 
@@ -296,12 +263,94 @@ hr { display: none; }
 
 .post .title {
 	height: 44px;
+	margin-left: 22px;
+}
+
+.post .title1 {
+	height: 30px; //高度
+	margin-left: 50px;
+}
+
+.post .title1.1 {
+	height: 20px; //高度
+	margin-left: 50px;
 }
 
 .post .title a {
 	text-decoration: none;
 	text-transform: capitalize;
 	font-size: 30px;
+	color: #FFFFFF;
+}
+
+.post .title2 {
+    font-size:40px；
+    left:50px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 30px;
+	color: #FFFFFF;
+}
+
+.post .title3 {
+    margin-left:250px;  //左边距
+    top:100px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 25px;
+	color: #FFFFFF;
+}
+
+.post .title33 {
+    margin-left:100px;  //左边距
+    top:100px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.post .title4 {
+    margin-left:100px;  //左边距
+    top:100px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 15px;
+	color: #FFFFFF;
+}
+
+
+.post .title5 {
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 30px;
+	color: #FFFFFF;
+}
+
+.post .title6 {
+    margin-left:20px;  //左边距
+    top:100px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.post .title7 {
+    margin-left:50px;  //左边距
+    top:100px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 15px;
+	color: #FFFFFF;
+}
+
+.post .title8 {
+    margin-left:20px;  //左边距
+    top:100px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 15px;
 	color: #FFFFFF;
 }
 
@@ -326,25 +375,56 @@ hr { display: none; }
 
 .post .meta a { }
 
-.post .entry {
-	border-top: 1px solid #2B2B2B;
+.post .entry1 {
+    font-size: 30px;
 	padding: 10px 0px;
+	font-weight: bold;
+}
+
+.post .entry {
+    font-size: 15px;
+	border-top: 1px solid #2B2B2B;
+	padding: 8px 0px;
+}
+
+.post .entry2 {
+    font-size: 15px;
+	border-top: 1px solid #2B2B2B;
+	padding: 20px 0px;
 }
 
 .post .links {
+    
+        
 	background: #2A4345;
 	border: 1px solid #5F817E;
 }
 
-.post .links {
-	display: block;
-	width: 120px;
-	height: 18px;
-	margin: 0px 0px 4px 0px; 
-	padding: 3px 0px 0px 40px;
+.post .links {   //保存修改周围的边框
+    
+	left:100px;
+	width: 100px;
+	height: 28px;
+	margin: 20px 0px 4px 280px;  //周围距离，调整保存修改的位置
+	padding: 3px 0px 0px 40px;    
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
+	font-size: 20px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.post .links1{
+	background: #2A4345;
+	border: 1px solid #5F817E;
+	left:100px;
+	width: 100px;
+	height: 28px;
+	margin: 20px 0px 4px 10px;  //周围距离，调整保存修改的位置
+	padding: 3px 0px 0px 40px;    
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
 	text-decoration: none;
 	font-weight: bold;
 	color: #FFFFFF;

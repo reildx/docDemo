@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
 Design by Free CSS Templates
@@ -20,8 +21,12 @@ Released   : 20091206
 <link href="css/MyDrafts.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
+    <s:submit  id="name" value="欢迎您，文献精灵" cssClass="name" 
+			onmouseover="change()" onmouseout="changeback()">
+	</s:submit>
 	<div id="logo">
-		<h1><a href="#">文献精灵  </a></h1>
+		<h1><a href="Main.jsp">文献精灵  </a>
+		</h1>
 		<p><em>最好的组内文献管理工具<a href="http://www.freecsstemplates.org/"></a></em></p>
 	</div>
 	<hr />
@@ -53,50 +58,75 @@ Released   : 20091206
 	<div id="page">
 		<div id="content">
 		  <div class="post">
+		  
+		     <!-- 真正的显示部分 -->
+		        <s:iterator value="#request.drafts" var="var"> 
+                    <h2 class="title"><a href="#"><s:property value="#var.title"/> </a> </h2>
+                    <p class="meta">南京大学海外教育学院 &nbsp; <a href="#"><s:property value="#var.author"/></a></p>
+                    <p><a>未完成的评论：</a><s:textarea value="#var.content"/></p>
+                    <div><a href="#" class="comments">继续评论</a></div>
+                </s:iterator> 
+		        
+		        
 				<h2 class="title"><a href="#">敏捷软件之弊 </a></h2>
 				<p class="meta">南京大学海外教育学院 &nbsp; <a href="#">作者：李东煦</a></p>
-				<div class="entry">
-					<p><a>摘要：</a></>简单的说，敏捷开发是一种以人为核心、迭代、循序渐进的开发方法。在敏捷开发中，软件项目的构建被切分成多个子项目，各个子项目的成果都经过测试，具备集成和可运行的特征。换言之，就是把一个大项目分为多个相互联系，但也可独立运行的小项目，并分别完成，在此过程中软件一直处于可使用状态。</p>
-					<p>敏捷建模（Agile Modeling，AM）的价值观包括了XP（Extreme Programming：极限编程）的四个价值观：沟通、简单、反馈、勇气，此外，还扩展了第五个价值观：谦逊。 </p>
-					<div><a href="#" class="links">全文查看</a><a href="#" class="comments">查看评论</a></div>
+				<div class="">
+					<p><a style="font-size:12px;">未完的评论：</a>
+					<input type="text" style="width:500px;" value="敏捷开发是一种以人为核心、迭代、循序渐进的开发方法(*^__^*)">
+					</input>
+					</p>
+					<div><a href="#" class="comments">继续评论</a></div>
 			</div>
 		  </div>
+		  
+		  <div class="post"><div class="entry"></div></div>
+		  
 			<div class="post">
 				<h2 class="title"><a href="#">开源软件的阴谋</a></h2>
 				<p class="meta">南京大学外国语学院&nbsp; <a href="#">作者：李全民</a></p>
-				<div class="entry">
-					<p><a>摘要：</a>开放源码软件《open-source》是一个新名词，它被定义为描述其源码可以被公众使用的软件，并且此软件的使用，修改和分发也不受许可证的限制。开放源码软件通常是有copyright的，它的许可证可能包含这样一些限制： 著意的保护它的开放源码状态，著者身份的公告，或者开发的控制。“开放源码”正在被公众利益软件组织注册为认证标记，这也是创立正式的开放源码定义的一种手段。</p>
+				<div class="">
+					<p><a style="font-size:12px;">未完的评论：</a>
+					<input type="text" style="width:500px;" value="敏捷开发是一种以人为核心、迭代、循序渐进的开发方法(*^__^*)">
+					</input>
+					</p>
 				</div>
-					<div><a href="#" class="links">查看全文</a><a href="#" class="comments">查看评论</a></div>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">关于测试驱动开发我有话要说</a></h2>
-				<p class="meta">南京大学软件学院&nbsp; <a href="#">作者：李兵</a></p>
-				<div class="entry">
-					<p><a>摘要：</a>测试驱动开发，英文全称Test-Driven Development，简称TDD，是一种不同于传统软件开发流程的新型的开发方法。它要求在编写某个功能的代码之前先编写测试代码，然后只编写使测试通过的功能代码，通过测试来推动整个开发的进行。这有助于编写简洁可用和高质量的代码，并加速开发过程。 </p>
-			  </div>
-					<div><a href="#" class="links">查看全文</a><a href="#" class="comments">查看评论</a></div>
+					<div><a href="#" class="comments">继续评论</a></div>
 			</div>
 		</div><!-- end #content -->
+				<!-- end #content -->
 		<div id="sidebar">
 			<ul>
 				<li>
 					<h2>热门标签</h2>
-					<p>开源 ssh jsp 敏捷 hibernate structs spring 框架 javascript ajax 架构 jquery oracle php android  mysql 云计算</p>
-				</li>
+					<p>开源 ssh jsp 敏捷 hibernate structs spring 框架 javascript ajax 架构
+						jquery oracle php android mysql 云计算</p></li>
 				<li>
-					<h2>文献分类 </h2>
+					<h2>文献分类</h2>
+					
 					<ul>
-						<li><a href="#">软件工程</a></li>
-						<li><a href="#">计算机科学</a></li>
-						<li><a href="#">医学</a></li>
-						<li><a href="#">经济学</a></li>
-						<li><a href="#">法学</a></li>
-						<li><a href="#">机械</a></li>
-						<li><a href="#">语言</a></li>
-						<li><a href="#">人文</a></li>
-						<li><a href="#">其它</a></li>
+						<li><a href="#">图书</a>
+						</li>
+						<li><a href="#">图书章节</a>
+						</li>
+						<li><a href="#">期刊</a>
+						</li>
+						<li><a href="#">会议</a>
+						</li>
+						<li><a href="#">学术论文</a>
+						</li>
+						<li><a href="#">技术报告</a>
+						</li>
+						<li><a href="#">在线资源</a>
+						</li>
 					</ul>
+	<!-- 		
+				<s:iterator var="ent" value="#request.list" status="statu">
+                   <s:property value="#ent" />
+                      <li>
+                         <a href="#">图书</a>
+				      </li>
+                </s:iterator>
+	 -->	
 				</li>
 				<li>
 					<h2>今日热门</h2>
@@ -124,4 +154,13 @@ Released   : 20091206
 	</div>
 	<!-- end #footer -->
 </body>
+<script type="text/javascript" >
+     function change(){
+        document.getElementById("name").value = "退出";
+    }
+    
+    function changeback(){
+        document.getElementById("name").value = "欢迎您，文献精灵";
+    }
+</script>
 </html>

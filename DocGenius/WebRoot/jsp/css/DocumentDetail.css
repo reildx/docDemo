@@ -5,6 +5,8 @@ http://www.freecsstemplates.org
 Released for free under a Creative Commons Attribution 2.5 License
 */
 
+
+
 body {
 	margin-top: 30px;
 	padding: 0;
@@ -21,7 +23,7 @@ body {
     cursor: pointer;
     font: 13px/26px "Helvetica Neue", Helvetica, Arial, sans-serif,bold;
     font-weight: bold;
-	width: 180px;
+	width:180px;
 	
 	margin: 0 10px 0 1120px;
     padding: 1px 9px 5px 18px;
@@ -30,6 +32,10 @@ body {
 	color:#a0a0a0;
     text-shadow: 1px 1px 0px #000000;
     filter: dropshadow(color=#000000, offx=1, offy=1);  
+}
+
+.name span{
+	background: url(../images/b13.png) no-repeat top left;
 }
 
 h1, h2, h3 {
@@ -198,45 +204,13 @@ hr { display: none; }
 
 /* Page */
 
-#statistic_page {
-	width: 990px;
+#page {
+	width: 970px;
 	margin: 0 auto;
-	padding: 40px 20px 40px 20px;
+	padding: 40px 30px 0px 30px;
 	background: #000000;
 }
 
-/* Image */
-.image{
-	text-align: center;
-}
-
-.item{
-	line-height: 100%;
-	font-size: 20px;
-	text-align: center;
-	color: #00ffff;
-	padding-top: 12px;
-}
-
-.choose{
-	text-align: center;
-	margin-bottom: 15px;
-}
-
-.input{
-	color: #00ffff;
-	font-size: 15px;
-}
-
-.submit {
-	width: 65px;
-	height: 30px;
-	border-radius: 5px;
-}
-
-#statistic_paper, #statistic_simple_comment, #statistic_detail_comment, #statistic_attachment{
-	outline-style: solid;
-}
 
 /** LOGO */
 
@@ -285,7 +259,7 @@ hr { display: none; }
 
 #content {
 	float: left;
-	width: 630px;
+	width: 930px;
 }
 
 /* Post */
@@ -296,6 +270,13 @@ hr { display: none; }
 
 .post .title {
 	height: 44px;
+}
+
+.post .title a {
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 30px;
+	color: #FFFFFF;
 }
 
 .post .title a {
@@ -338,8 +319,8 @@ hr { display: none; }
 
 .post .links {
 	display: block;
-	width: 120px;
-	height: 18px;
+	width: 100px;
+	height: 20px;
 	margin: 0px 0px 4px 0px; 
 	padding: 3px 0px 0px 40px;
 	text-decoration: none;
@@ -350,10 +331,29 @@ hr { display: none; }
 	color: #FFFFFF;
 }
 
+.post .edit {
+	background: #2A4345;
+	border: 1px solid #5F817E;
+}
+
+.post .edit {
+	display: block;
+	width: 60px;
+	height: 20px;
+	margin: 0px 0px 4px 0px; 
+	padding: 3px 0px 0px 30px;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
 .post .comments {
 	display: block;
-	width: 120px;
-	height: 18px;
+	width: 100px;
+	height: 20px;
 	margin: 0px; 
 	padding: 3px 0px 0px 40px;
 	background: #2A4345;
@@ -364,6 +364,18 @@ hr { display: none; }
 	text-decoration: none;
 	font-weight: bold;
 	color: #FFFFFF;
+}
+
+.post .leftFloat {
+	float:left;
+}
+
+.post .rightFloat {
+	float:right;
+}
+
+.post .clear {
+	clear:both;
 }
 
 /* Sidebar */

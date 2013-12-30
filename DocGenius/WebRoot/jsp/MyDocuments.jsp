@@ -22,8 +22,12 @@ Released   : 20091206
 <link href="css/MyDocuments.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
+    <s:submit  id="name" value="欢迎您，文献精灵" cssClass="name" 
+			onmouseover="change()" onmouseout="changeback()">
+	</s:submit>
 	<div id="logo">
-		<h1><a href="#">文献精灵  </a></h1>
+		<h1><a href="Main.jsp">文献精灵  </a>
+		</h1>
 		<p><em>最好的组内文献管理工具<a href="http://www.freecsstemplates.org/"></a></em></p>
 	</div>
 	<hr />
@@ -156,25 +160,40 @@ Released   : 20091206
 					</div>
 			</div>
 		</div><!-- end #content -->
+				<!-- end #content -->
 		<div id="sidebar">
 			<ul>
 				<li>
 					<h2>热门标签</h2>
-					<p>开源 ssh jsp 敏捷 hibernate structs spring 框架 javascript ajax 架构 jquery oracle php android  mysql 云计算</p>
-				</li>
+					<p>开源 ssh jsp 敏捷 hibernate structs spring 框架 javascript ajax 架构
+						jquery oracle php android mysql 云计算</p></li>
 				<li>
-					<h2>文献分类 </h2>
+					<h2>文献分类</h2>
+					
 					<ul>
-						<li><a href="#">软件工程</a></li>
-						<li><a href="#">计算机科学</a></li>
-						<li><a href="#">医学</a></li>
-						<li><a href="#">经济学</a></li>
-						<li><a href="#">法学</a></li>
-						<li><a href="#">机械</a></li>
-						<li><a href="#">语言</a></li>
-						<li><a href="#">人文</a></li>
-						<li><a href="#">其它</a></li>
+						<li><a href="#">图书</a>
+						</li>
+						<li><a href="#">图书章节</a>
+						</li>
+						<li><a href="#">期刊</a>
+						</li>
+						<li><a href="#">会议</a>
+						</li>
+						<li><a href="#">学术论文</a>
+						</li>
+						<li><a href="#">技术报告</a>
+						</li>
+						<li><a href="#">在线资源</a>
+						</li>
 					</ul>
+	<!-- 		
+				<s:iterator var="ent" value="#request.list" status="statu">
+                   <s:property value="#ent" />
+                      <li>
+                         <a href="#">图书</a>
+				      </li>
+                </s:iterator>
+	 -->	
 				</li>
 				<li>
 					<h2>今日热门</h2>
@@ -202,4 +221,13 @@ Released   : 20091206
 	</div>
 	<!-- end #footer -->
 </body>
+<script type="text/javascript" >
+     function change(){
+        document.getElementById("name").value = "退出";
+    }
+    
+    function changeback(){
+        document.getElementById("name").value = "欢迎您，文献精灵";
+    }
+</script>
 </html>
