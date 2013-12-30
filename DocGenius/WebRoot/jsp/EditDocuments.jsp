@@ -15,6 +15,10 @@
 </head>
 <body onload="setSelectValue()">
 
+    <s:submit  id="name" value="欢迎您，文献精灵" cssClass="name" 
+			onmouseover="change()" onmouseout="changeback()">
+    </s:submit>
+
 	<div id="logo">
 		<h1>
 			<a href="#">文献精灵 </a>
@@ -320,6 +324,15 @@
 <%int value; %>
 <script type="text/javascript" >
     var button = 0;
+    
+    function change(){
+        document.getElementById("name").value = "退出";
+    }
+    
+    function changeback(){
+        document.getElementById("name").value = "欢迎您，文献精灵";
+    }
+    
     function add(){
         if(document.getElementById("demo1").style.display=="none")
             document.getElementById("demo1").style.display="";

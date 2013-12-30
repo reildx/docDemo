@@ -7,10 +7,10 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver">
 		</property>
-		<property name="url" value="jdbc:mysql://localhost:3306/docgenius?useUnicode=true&amp;characterEncoding=UTF-8">
+		<property name="url" value="jdbc:mysql://localhost:3306/docgenius">
 		</property>
 		<property name="username" value="root"></property>
-		
+		<property name="password" value=""></property>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
@@ -29,6 +29,9 @@
 				<value>entity/User.hbm.xml</value>
 				<value>entity/Paper.hbm.xml</value>
 				<value>entity/Attach.hbm.xml</value>
+				<value>entity/Comment.hbm.xml</value>
+				<value>entity/Typeconfig.hbm.xml</value>
+				<value>entity/Typeinfoconfig.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -76,5 +79,40 @@
 			<ref bean="PaperService" />
 		</property>
 	</bean>
+	<bean id="CommentService" class="service.CommentService">
+		<property name="commentdao">
+			<ref bean="CommentDAO" /></property>
+	</bean>
+	
+	<bean id ="CommentAction" class="action.CommentAction">
+		<property name="commentservice">
+			<ref bean="CommentService"/>
+			</property>
+	</bean>
+	<bean id="ConfigService" class="service.ConfigService">
+		<property name="typeconfigdao">
+			<ref bean="TypeconfigDAO" /></property>
+		<property name="typeinfoconfigdao">
+			<ref bean="TypeinfoconfigDAO" /></property>
+	</bean>
+	<bean id ="PaperConfigAction" class="action.PaperConfigAction">
+		<property name="configservice">
+			<ref bean="ConfigService"/>
+			</property>
+	</bean>
 
-</beans>
+	<bean id="CommentDAO" class="dao.CommentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TypeconfigDAO" class="dao.TypeconfigDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TypeinfoconfigDAO" class="dao.TypeinfoconfigDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean></beans>

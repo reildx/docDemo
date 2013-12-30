@@ -13,7 +13,7 @@
         <property name="userId" type="java.lang.String">
             <column name="userId" />
         </property>
-        <property name="type" type="java.lang.String">
+        <property name="type" type="java.lang.Integer">
             <column name="type" />
         </property>
         <property name="title" type="java.lang.String">
@@ -42,6 +42,129 @@
         </property>
         <property name="tips" type="java.lang.String">
             <column name="tips" />
+        </property>
+        <property name="score" type="java.lang.Double">
+            <column name="score" precision="22" scale="0" />
+        </property>
+        <property name="column1" type="java.lang.String">
+            <column name="column1" />
+        </property>
+        <property name="column2" type="java.lang.String">
+            <column name="column2" />
+        </property>
+        <property name="column3" type="java.lang.String">
+            <column name="column3" />
+        </property>
+        <property name="column4" type="java.lang.String">
+            <column name="column4" />
+        </property>
+        <property name="column5" type="java.lang.String">
+            <column name="column5" />
+        </property>
+        <property name="column6" type="java.lang.String">
+            <column name="column6" />
+        </property>
+        <property name="column7" type="java.lang.String">
+            <column name="column7" />
+        </property>
+        <property name="column8" type="java.lang.String">
+            <column name="column8" />
+        </property>
+        <property name="column9" type="java.lang.String">
+            <column name="column9" />
+        </property>
+        <property name="column10" type="java.lang.String">
+            <column name="column10" />
+        </property>
+        <property name="column11" type="java.lang.String">
+            <column name="column11" />
+        </property>
+        <property name="column12" type="java.lang.String">
+            <column name="column12" />
+        </property>
+        <property name="column13" type="java.lang.String">
+            <column name="column13" />
+        </property>
+        <property name="column14" type="java.lang.String">
+            <column name="column14" />
+        </property>
+        <property name="column15" type="java.lang.String">
+            <column name="column15" />
+        </property>
+        <property name="column16" type="java.lang.String">
+            <column name="column16" />
+        </property>
+        <property name="column17" type="java.lang.String">
+            <column name="column17" />
+        </property>
+        <property name="column18" type="java.lang.String">
+            <column name="column18" />
+        </property>
+        <property name="column19" type="java.lang.String">
+            <column name="column19" />
+        </property>
+        <property name="column20" type="java.lang.String">
+            <column name="column20" />
+        </property>
+        <property name="column21" type="java.lang.String">
+            <column name="column21" />
+        </property>
+        <property name="column22" type="java.lang.String">
+            <column name="column22" />
+        </property>
+        <property name="column23" type="java.lang.String">
+            <column name="column23" />
+        </property>
+        <property name="column24" type="java.lang.String">
+            <column name="column24" />
+        </property>
+        <property name="column25" type="java.lang.String">
+            <column name="column25" />
+        </property>
+        <property name="column26" type="java.lang.String">
+            <column name="column26" />
+        </property>
+        <property name="column27" type="java.lang.String">
+            <column name="column27" />
+        </property>
+        <property name="column28" type="java.lang.String">
+            <column name="column28" />
+        </property>
+        <property name="column29" type="java.lang.String">
+            <column name="column29" />
+        </property>
+        <property name="column30" type="java.lang.String">
+            <column name="column30" />
+        </property>
+        <property name="column31" type="java.lang.String">
+            <column name="column31" />
+        </property>
+        <property name="column32" type="java.lang.String">
+            <column name="column32" />
+        </property>
+        <property name="column33" type="java.lang.String">
+            <column name="column33" />
+        </property>
+        <property name="column34" type="java.lang.String">
+            <column name="column34" />
+        </property>
+        <property name="column35" type="java.lang.String">
+            <column name="column35" />
+        </property>
+        <property name="column36" type="java.lang.String">
+            <column name="column36" />
+        </property>
+        <property name="column37" type="java.lang.String">
+            <column name="column37" />
+        </property>
+        <property name="column38" type="java.lang.String">
+            <column name="column38" />
+        </property>
+        <property name="column39" type="java.lang.String">
+            <column name="column39" />
+        </property>
+        <property name="column40" type="java.lang.String">
+            <column name="column40" />
         </property>
     </class>
 </hibernate-mapping>

@@ -84,12 +84,6 @@ Released   : 20091206
 				        <td>
 				            &nbsp;
 				        </td>
-				        <td>
-				            <input type="submit" value="写短评"  onclick="jump()"></input>
-				        </td>
-				        <td>
-				            <input type="submit" value="详细评价"></input>
-				        </td>
 				    </tr>
 				</table>
 				
@@ -168,6 +162,7 @@ Released   : 20091206
 			    </p>
 			    <p>
 			    <a href="#">查看全部</a>
+			    <input type="submit" value="写短评"  onclick="jump()" style="margin-left:50px;"></input>
 			    </p>
 			    
 			    <div class="entry"></div>
@@ -221,6 +216,7 @@ Released   : 20091206
 			    </p>
 			    <p>
 			    <a href="#">查看全部</a>
+			    <input type="submit" value="详细评价"  onclick="jump()" style="margin-left:50px;"></input>
 			    </p>
 			    <p>
 			    <div><a href="getMyPapers" class="links">返回</a></div>

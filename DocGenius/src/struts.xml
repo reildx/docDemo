@@ -15,7 +15,7 @@
           <action name="login" class="UserAction" method="login">
           	<result name ="success" type="chain">getMyPapers</result>
           	<result name ="input">/jsp/Login.jsp</result>
-          	<result name="admin">/jsp/Admin.jsp</result>
+          	<result name="admin">/jsp/MyProfile.jsp</result>
           </action>
           
           <action name="uploadAttach" class="PaperAction" method="uploadAttach">
@@ -45,8 +45,30 @@
           	<result name="success" type="chain">getAttaches</result>
           </action>
           
+          <action name="getPaperTypes" class="PaperConfigAction" method="getPaperTypes">
+          	<result name="success">/jsp/AdminKind.jsp</result>
+          </action>
+          
+          
            <action name="getAttaches" class="PaperAction" method="getAttaches">
           	<result name="success">/jsp/EditDocuments.jsp</result>
           </action>
+          
+          <action name="configPaperTypes" class="PaperConfigAction" method="editPaperTypes">
+          	<result name="editTypes_success">/jsp/Login.jsp</result>
+          	<result name="editTypes_fail">/jsp/ImportDocuments.jsp</result>
+          </action>
+          
+<!--           <action name="commitSimpleComment" class="CommentAction" method="commitSimpleComment"> -->
+<!--           	<result name="success"></result> -->
+<!--           </action> -->
+          
+<!--           <action name="commitDetailComment" class="CommentAction" method="commitDetailComment"> -->
+<!--           	<result name="success"></result> -->
+<!--           </action> -->
+          
+<!--           <action name="saveComment" class="CommentAction" method="saveCommit"> -->
+<!--           	<result name="success"></result> -->
+<!--           </action> -->
       </package>
 </struts>    

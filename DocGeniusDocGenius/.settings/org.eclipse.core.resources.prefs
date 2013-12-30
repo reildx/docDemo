@@ -1,0 +1,26 @@
+#Mon Dec 30 10:36:12 CST 2013
+eclipse.preferences.version=1
+encoding//WebRoot/jsp/DocumentDetail.jsp=UTF-8
+encoding//WebRoot/jsp/MyDocuments.jsp=UTF-8
+encoding//WebRoot/jsp/MyDrafts.jsp=UTF-8
+encoding//WebRoot/jsp/css/AdminComment.css=UTF-8
+encoding//WebRoot/jsp/css/AdminInfo.css=UTF-8
+encoding//WebRoot/jsp/css/AdminKind.css=UTF-8
+encoding//WebRoot/jsp/css/AdminQuote.css=UTF-8
+encoding//WebRoot/jsp/css/AdminUser.css=UTF-8
+encoding//WebRoot/jsp/css/DocumentComments.css=UTF-8
+encoding//WebRoot/jsp/css/DocumentDetail.css=UTF-8
+encoding//WebRoot/jsp/css/DocumentSearchResult.css=UTF-8
+encoding//WebRoot/jsp/css/EditDocuments.css=UTF-8
+encoding//WebRoot/jsp/css/ImportDocuments.css=UTF-8
+encoding//WebRoot/jsp/css/ImportDocuments_back.css=UTF-8
+encoding//WebRoot/jsp/css/Main.css=UTF-8
+encoding//WebRoot/jsp/css/MultiSearch.css=UTF-8
+encoding//WebRoot/jsp/css/MyDocuments.css=UTF-8
+encoding//WebRoot/jsp/css/MyDrafts.css=UTF-8
+encoding//WebRoot/jsp/css/MyProfile.css=UTF-8
+encoding//WebRoot/jsp/css/MyStatistics.css=UTF-8
+encoding//WebRoot/user/login.jsp=UTF-8
+encoding//src/action/BaseAction.java=UTF-8
+encoding//src/action/PaperAction.java=UTF-8
+encoding//src/entity/User.java=UTF-8

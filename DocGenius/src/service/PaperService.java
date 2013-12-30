@@ -20,6 +20,7 @@ public class PaperService {
 		
 	}
 	
+	
 	public boolean uploadAttach(Attach attach) {
 		this.attachdao.saveOrUpdate(attach);
 		return true;

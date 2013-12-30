@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost:3306/docgenius?useUnicode=true&amp;characterEncoding=UTF-8">
+		</property>
+		<property name="username" value="root"></property>
+		
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>entity/User.hbm.xml</value>
+				<value>entity/Paper.hbm.xml</value>
+				<value>entity/Attach.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+	<!-- throw all your DAO,Action, Service Here! -->
+	<bean id="UserDAO" class="dao.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="PaperDAO" class="dao.PaperDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="UserService" class="service.UserService">
+		<property name="userdao">
+			<ref bean="UserDAO" />
+		</property>
+	</bean>
+	<bean id="UserAction" class="action.UserAction">
+		<property name="userservice">
+			<ref bean="UserService" />
+		</property>
+	</bean>
+	<bean id="AttachDAO" class="dao.AttachDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="PaperService" class="service.PaperService">
+		<property name="paperdao">
+			<ref bean="PaperDAO" />
+		</property>
+		<property name="attachdao">
+			<ref bean="AttachDAO" />
+		</property>
+	</bean>
+	<bean id="PaperAction" class="action.PaperAction">
+		<property name="paperservice">
+			<ref bean="PaperService" />
+		</property>
+	</bean>
+
+</beans>

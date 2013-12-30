@@ -6,7 +6,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 */
 
 body {
-	margin-top: 80px;
+	margin-top: 30px;
 	padding: 0;
 	background: #000000 url(../images/img01.gif) repeat-x center top;
 	font-family: Arial, Helvetica, sans-serif;
@@ -82,7 +82,7 @@ hr { display: none; }
 }
 
 #header {
-	width: 940px;
+	width: 1010px;
 	height: 46px;
 	margin: 0 auto;
 	padding: 0px 10px;
@@ -180,7 +180,7 @@ hr { display: none; }
 /* Page */
 
 #page {
-	width: 900px;
+	width: 970px;
 	margin: 0 auto;
 	padding: 40px 30px 0px 30px;
 	background: #000000;
@@ -190,7 +190,7 @@ hr { display: none; }
 /** LOGO */
 
 #logo {
-	width: 960px;
+	width: 1010px;
 	height: 94px;
 	margin: 0 auto;
 }
@@ -230,7 +230,7 @@ hr { display: none; }
     font-weight: bold;
 	width:150px;
 	
-	margin: 0 10px 0 570px;
+	margin: 0 10px 0 1120px;
     padding: 1px 9px 5px 18px;
 	
 	background: url(../images/b7.png) no-repeat top right; 
@@ -253,7 +253,7 @@ hr { display: none; }
 
 #content {
 	float: left;
-	width: 610px;
+	width: 630px;
 }
 
 /* Post */
